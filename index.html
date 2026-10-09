@@ -138,6 +138,8 @@ section.alt{background:var(--ice)}
 .dur{display:inline-block;background:var(--ice);border-radius:6px;padding:2px 8px;font-weight:700;font-size:.9rem}
 .note{border-left:4px solid var(--warn);background:#fff7f0;padding:14px 18px;border-radius:8px;margin-top:22px}
 table{border-collapse:collapse;width:100%;margin-top:14px;background:#fff}
+.tablewrap{overflow-x:auto}
+@media(max-width:480px){th,td{padding:8px 6px;font-size:.88rem}}
 th,td{text-align:left;padding:10px;border-bottom:1px solid #dde7f0}
 .tag{display:inline-block;background:#ffe08a;color:#5a3d00;font-weight:800;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
 .placeholder{border:2px dashed #e0b84a;background:#fffdf3;border-radius:14px;padding:20px}
@@ -199,7 +201,7 @@ footer a{color:#fff}
     </article>
   </div>
 
-  <table>
+  <div class="tablewrap"><table>
     <caption style="text-align:left;font-weight:700;padding-bottom:6px">Prisjämförelse per timme</caption>
     <thead><tr><th>Lektion</th><th>Längd</th><th>Pris</th><th>Motsvarar per timme</th></tr></thead>
     <tbody>
@@ -207,7 +209,7 @@ footer a{color:#fff}
       <tr><td>Nybörjarlektion</td><td>45 min</td><td>550 kr</td><td>ca 733 kr/h</td></tr>
       <tr><td>Grupplektion (minst 3)</td><td>60 min</td><td>200 kr/person</td><td>200 kr/h per person</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <div class="note" id="sparavgift">
     <strong>Spåravgift ingår inte.</strong> Alla som åker i Kläppens längdspår behöver betala spåravgift och bära spårknapp – både du och jag. Säsongen 25/26 kostar ett dagkort <strong>135 kr för vuxna</strong> och <strong>85 kr för ungdomar och seniorer</strong>. Källa: <a href="https://www.klappen.se/skidakning/langdskidakning/priser-och-betalnng/" rel="noopener">Kläppens prissida för längdåkning</a>. Kontrollera aktuella priser hos Kläppen.
