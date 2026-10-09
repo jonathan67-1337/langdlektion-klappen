@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t3"><title id="t3">Exempelbild: siluett av en anonym längdskidåkare bakifrån</title>
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c89a"/><stop offset=".55" stop-color="#f3dfc8"/><stop offset="1" stop-color="#e9eef5"/></linearGradient></defs>
+<rect width="800" height="500" fill="url(#s)"/>
+<path d="M0 300 L140 220 L260 280 L400 190 L540 270 L680 210 L800 260 V360 H0Z" fill="#b8c6d8"/>
+<rect y="350" width="800" height="150" fill="#f4f8fc"/>
+<path d="M385 350 L330 500 M415 350 L470 500" stroke="#c8d6e5" stroke-width="5"/>
+<g fill="#16263a">
+<ellipse cx="400" cy="205" rx="17" ry="19"/>
+<path d="M378 226 Q400 218 422 226 L432 300 Q400 310 368 300Z"/>
+<path d="M372 300 L362 370 L376 372 L392 304Z"/><path d="M428 300 L446 368 L432 372 L410 304Z"/>
+<path d="M380 232 L345 285 L352 290 L388 245Z"/><path d="M420 232 L455 280 L448 286 L414 246Z"/>
+</g>
+<g stroke="#16263a" stroke-width="4" stroke-linecap="round"><line x1="348" y1="287" x2="320" y2="378"/><line x1="452" y1="283" x2="482" y2="376"/></g>
+<g stroke="#16263a" stroke-width="6" stroke-linecap="round"><line x1="350" y1="375" x2="380" y2="375"/><line x1="428" y1="372" x2="458" y2="372"/></g>
+<rect x="16" y="16" rx="6" width="150" height="36" fill="#0b2540" opacity=".85"/><text x="91" y="40" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">Exempelbild</text>
+</svg>

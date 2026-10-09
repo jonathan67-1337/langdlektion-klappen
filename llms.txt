@@ -1,0 +1,21 @@
+# Längdskidlektioner i Kläppen – Jonathan Karlsson
+
+> Privata längdskidlektioner (klassisk stil) i Kläppen, Sälen (Transtrand, Malung-Sälens kommun, Dalarna, Sverige). Ett billigare alternativ till skidskolorna: kortare lektioner till lägre pris per timme. Betalning med Swish.
+
+## Priser
+- Teknikpass, 30 minuter: 350 kr. En teknik i fokus, t.ex. diagonalgång eller stakning.
+- Nybörjarlektion, 45 minuter: 550 kr.
+- Dela lektionen (grupp), 60 minuter: 200 kr per person, minst 3 personer.
+- Spåravgift till Kläppen ingår inte. Säsong 25/26: 135 kr/dag vuxen, 85 kr/dag ungdom/senior (källa: https://www.klappen.se/skidakning/langdskidakning/priser-och-betalnng/).
+
+## Bra att veta
+- Egen utrustning (skidor, pjäxor, stavar) behövs; kan hyras i Kläppen/Sälen. Ingår inte.
+- Passar nybörjare, barn (gärna med vuxen) och familjer (grupplektion).
+- Mötesplats meddelas i bokningsbekräftelsen.
+- Bokning: förfrågan via formuläret på https://jonathan67-1337.github.io/langdlektion-klappen/#boka
+
+## Länkar
+- Hemsida: https://jonathan67-1337.github.io/langdlektion-klappen/
+- Priser: https://jonathan67-1337.github.io/langdlektion-klappen/#priser
+- Vanliga frågor: https://jonathan67-1337.github.io/langdlektion-klappen/#faq
+- Boka: https://jonathan67-1337.github.io/langdlektion-klappen/#boka
