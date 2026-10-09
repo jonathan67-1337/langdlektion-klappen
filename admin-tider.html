@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin – tider</title>
+<style>
+body{font-family:system-ui,Arial,sans-serif;max-width:760px;margin:0 auto;padding:16px;color:#0b2540;line-height:1.5}
+table{width:100%;border-collapse:collapse}td,th{padding:6px 4px;border-bottom:1px solid #dde7f0;text-align:left;font-size:.95rem}
+input,select{font:inherit;padding:6px;border:1px solid #b9cbdc;border-radius:6px}
+button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #1d5fa8;background:#fff;color:#1d5fa8;font-weight:700;cursor:pointer}
+button.main{background:#1d5fa8;color:#fff}
+textarea{width:100%;height:220px;font-family:ui-monospace,monospace;font-size:.9rem}
+.box{background:#eaf3fb;border-radius:10px;padding:12px 16px;margin:14px 0}
+label.t{white-space:nowrap;margin-right:6px}
+@media(max-width:600px){td,th{font-size:.85rem}input[type=date]{width:8.5rem}}
+</style>
+</head>
+<body>
+<h1>Ändra lediga tider</h1>
+<div class="box">
+<ol>
+<li>Lägg till, ändra eller ta bort tider nedan.</li>
+<li>Tryck <b>Kopiera text</b>.</li>
+<li>Öppna <a href="https://github.com/jonathan67-1337/langdlektion-klappen/edit/main/tider.txt" target="_blank" rel="noopener">tider.txt på GitHub</a>, markera allt, klistra in och tryck <b>Commit changes</b>.</li>
+</ol>
+Den här sidan sparar ingenting själv. Det är bara texten du klistrar in på GitHub som räknas.
+</div>
+<p><label><input type="checkbox" id="demo"> Visa etiketten "Exempeltider" på hemsidan</label></p>
+<table><thead><tr><th>Datum</th><th>Tid</th><th>Lektioner</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table>
+<p><button type="button" id="add">+ Lägg till tid</button></p>
+<p><button type="button" class="main" id="copy">Kopiera text</button> <span id="msg"></span></p>
+<textarea id="out" readonly aria-label="Text till tider.txt"></textarea>
+<script>
+var HEAD="", rows=document.getElementById("rows"), out=document.getElementById("out"), demo=document.getElementById("demo");
+function row(r){
+  r=r||{date:"",time:"10:00",types:["30"],status:"ledig"};
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td><input type="date" class="d"></td><td><input type="time" class="ti" step="900"></td><td>'+
+   ['30','45','60'].map(function(t){return '<label class="t"><input type="checkbox" value="'+t+'">'+t+'</label>'}).join('')+
+   '</td><td><select class="s"><option>ledig</option><option>bokad</option></select></td><td><button type="button" title="Ta bort">✕</button></td>';
+  tr.querySelector(".d").value=r.date; tr.querySelector(".ti").value=r.time; tr.querySelector(".s").value=r.status;
+  [].forEach.call(tr.querySelectorAll("input[type=checkbox]"),function(c){c.checked=r.types.indexOf(c.value)>-1});
+  tr.querySelector("button").onclick=function(){tr.remove();build()};
+  tr.oninput=tr.onchange=build;
+  rows.appendChild(tr);
+}
+function build(){
+  var lines=[].map.call(rows.children,function(tr){
+    var d=tr.querySelector(".d").value,t=tr.querySelector(".ti").value,
+        ty=[].filter.call(tr.querySelectorAll("input[type=checkbox]"),function(c){return c.checked}).map(function(c){return c.value}).join(",");
+    if(!d||!t||!ty) return null;
+    return {k:d+" "+t,s:(d+"  "+t+"  "+(ty+"         ").slice(0,9)+" "+tr.querySelector(".s").value)};
+  }).filter(Boolean).sort(function(a,b){return a.k<b.k?-1:1}).map(function(x){return x.s});
+  out.value=HEAD+(demo.checked?"EXEMPELTIDER\n\n":"")+lines.join("\n")+"\n";
+}
+document.getElementById("add").onclick=function(){row();build()};
+demo.onchange=build;
+document.getElementById("copy").onclick=function(){
+  build(); out.select();
+  (navigator.clipboard?navigator.clipboard.writeText(out.value):Promise.reject()).then(function(){msg.textContent="Kopierat!"},function(){document.execCommand("copy");msg.textContent="Kopierat (eller markera och kopiera själv)."});
+};
+var msg=document.getElementById("msg");
+fetch("tider.txt?v="+Date.now()).then(function(r){return r.text()}).then(function(txt){
+  var head=[],body=false;
+  txt.split(/\r?\n/).forEach(function(l){
+    var s=l.trim();
+    if(!body&&(s===""||s.charAt(0)==="#")){head.push(l);return}
+    body=true;
+    if(/^EXEMPELTIDER$/i.test(s)){demo.checked=true;return}
+    var p=s.split(/\s+/); if(!/^\d{4}-\d{2}-\d{2}$/.test(p[0]||"")) return;
+    row({date:p[0],time:(p[1]||"").replace(".",":"),types:(p[2]||"").split(","),status:(p[3]||"ledig").toLowerCase()});
+  });
+  while(head.length&&head[head.length-1].trim()==="")head.pop();
+  HEAD=head.join("\n")+"\n\n"; build();
+}).catch(function(){msg.textContent="Kunde inte läsa tider.txt – du kan ändå lägga till tider."; build()});
+</script>
+</body>
+</html>

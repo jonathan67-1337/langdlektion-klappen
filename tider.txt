@@ -1,0 +1,48 @@
+# ============================================================
+#  LEDIGA TIDER – LÄNGDSKIDLEKTIONER I KLÄPPEN
+# ============================================================
+#
+#  Så här ändrar du tiderna (ingen kodning behövs):
+#
+#  1. Klicka på pennan (Edit this file) uppe till höger på GitHub.
+#  2. Skriv EN tid per rad, så här:
+#
+#        DATUM       TID    LEKTIONER   STATUS
+#        2026-12-12  10:00  30,45       ledig
+#
+#     DATUM      = år-månad-dag, t.ex. 2026-12-12
+#     TID        = starttid, t.ex. 09:30
+#     LEKTIONER  = vilka lektioner som passar tiden, med komma
+#                  emellan och inga mellanslag:
+#                     30 = Teknikpass 30 min (350 kr)
+#                     45 = Nybörjarlektion 45 min (550 kr)
+#                     60 = Grupp 60 min (250 kr/person)
+#     STATUS     = ledig  eller  bokad
+#
+#  3. Klicka på den gröna knappen "Commit changes". Hemsidan
+#     uppdateras inom några minuter.
+#
+#  VIKTIGT:
+#  - När någon har bokat en tid tas den INTE bort automatiskt.
+#    Ändra då "ledig" till "bokad" på den raden (eller ta bort raden).
+#  - Tider som redan har passerat visas gråade automatiskt.
+#  - Rader som börjar med # visas inte på hemsidan.
+#  - Raden EXEMPELTIDER nedan gör att sidan visar etiketten
+#    "Exempeltider". Ta bort den raden när du lagt in riktiga tider.
+#
+#  Tips: på sidan admin-tider.html kan du klicka ihop tiderna och
+#  kopiera texten hit.
+# ============================================================
+
+EXEMPELTIDER
+
+2026-12-05  10:00  30,45     ledig
+2026-12-05  11:00  30        bokad
+2026-12-05  13:00  60        ledig
+2026-12-06  09:30  30,45     ledig
+2026-12-06  14:00  30,45,60  ledig
+2026-12-12  10:00  45        ledig
+2026-12-12  11:00  30        ledig
+2026-12-13  10:00  60        bokad
+2026-12-13  13:30  30,45     ledig
+2026-12-19  10:00  30,45,60  ledig
