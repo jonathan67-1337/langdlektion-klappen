@@ -35,7 +35,7 @@
   function render() {
     weekEl.innerHTML = "";
     var end = addDays(weekStart, 6);
-    label.textContent = "Vecka " + weekNo(weekStart) + " · " + weekStart.toLocaleDateString("sv-SE", { day: "numeric", month: "short" }) + " – " + end.toLocaleDateString("sv-SE", { day: "numeric", month: "short", year: "numeric" });
+    label.textContent = "v." + weekNo(weekStart) + " · " + weekStart.toLocaleDateString("sv-SE", { day: "numeric", month: "short" }) + " – " + end.toLocaleDateString("sv-SE", { day: "numeric", month: "short" });
     prev.disabled = weekStart <= minWeek; next.disabled = weekStart >= maxWeek;
     var mobile = window.matchMedia("(max-width:760px)").matches;
     for (var i = 0; i < 7; i++) {
